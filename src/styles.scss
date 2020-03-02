@@ -10,5 +10,18 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     color: white;
 }
 .container {
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+.buttonContainer {
+    padding: 20px;;
+}
+.textBox {
+    width: 100%;
+}
+.live{
+    font-weight: 500;
+    color: navy;
     padding: 30px;
 }

@@ -7,31 +7,43 @@
     <label for="birthday">Date:</label>
     <input type="date">
     <br>
+    <br>
+
     <input type="submit" value="submit">
 </form> -->
 
 
 <div class="container">
-  <form class="example-form">
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="First Name">
+    <mat-form-field class="textBox">
+      <input matInput placeholder="First Name"  id = "firstName" [(ngModel)] = "newCustomer.firstNameInput" >
     </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Last Name">
+    <mat-form-field class="textBox">
+      <input matInput placeholder="Last Name" id = "lastName" [(ngModel)] = "newCustomer.lastNameInput" >
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field class="textBox">
       <mat-label>Choose a date</mat-label>
-      <input matInput [matDatepicker]="picker">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <input matInput [matDatepicker]="picker" [(ngModel)] = "newCustomer.date">
+      <mat-datepicker-toggle matSuffix [for]="picker"  ></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
-    <br>
-        <mat-radio-group aria-label="Select an option">
-      <mat-radio-button value="1">Option 1</mat-radio-button>
+</div>
+<div class="container">
+    <mat-radio-group aria-label="Select an option">
+      <mat-radio-button value="1">Option 1</mat-radio-button><br>
       <mat-radio-button value="2">Option 2</mat-radio-button>
     </mat-radio-group>
-  </form>
-
-
-  <button mat-raised-button color="primary">Submit</button>
 </div>
+<div class="buttonContainer">
+  <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>&nbsp;
+  <button mat-raised-button color="primary" (click)="onClear()">Clear</button>
+</div>
+
+<div class = "live">
+{{newCustomer.firstNameInput}}
+{{newCustomer.lastNameInput}}
+{{newCustomer.date}}
+</div>
+
+<p>{{firstname}}</p>
+<p>{{lastname}}</p>
+<p>{{date}}</p>
